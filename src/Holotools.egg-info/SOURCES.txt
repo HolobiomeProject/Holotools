@@ -17,3 +17,5 @@ src/__pycache__/ht_trim.cpython-37.pyc
 src/__pycache__/htrim.cpython-37.pyc
 src/__pycache__/trim.cpython-37.pyc
 src/holotools/__pycache__/__init__.cpython-37.pyc
+src/holotools/__pycache__/hbiop.cpython-37.pyc
+src/holotools/__pycache__/htrim.cpython-37.pyc
