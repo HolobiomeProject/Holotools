@@ -54,5 +54,21 @@ def sliding_window(sequence,window_size = 20,max_number_ns = 2,max_ns_inarow = 2
             'qual':qual,
             'left':left,
             'right':right,}
-    print(d)
     return d
+
+
+from hbiop import *
+def trim_many(file,to = True,side='both',window_size = 20,max_number_ns = 2,max_ns_inarow = 2,min_len = 600,max_len = None):
+    '''dictionary output from a multifasta input'''
+    d = fdict(file)
+    td = {}
+    for k,v in d.items():
+        print(k)
+        td[k]=sliding_window(v,side=side,window_size=window_size,max_number_ns=max_number_ns,max_ns_inarow=max_ns_inarow,min_len=min_len,max_len=max_len)
+        if side == 'left':
+            td[k]['tseq']=td[k]['seq'][td[k]['left']:]
+        if side == 'right':
+            td[k]['tseq']=td[k]['seq'][:td[k]['right']]
+        if to==True:
+            td[k]=td[k]['tseq']
+    return td
