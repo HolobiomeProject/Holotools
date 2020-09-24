@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+dist/holotools-0.0.1-py3-none-any.whl
+src/clustering.py
+src/holotools.egg-info/PKG-INFO
+src/holotools.egg-info/SOURCES.txt
+src/holotools.egg-info/dependency_links.txt
+src/holotools.egg-info/requires.txt
+src/holotools.egg-info/top_level.txt

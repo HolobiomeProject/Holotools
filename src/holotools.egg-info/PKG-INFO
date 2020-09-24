@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: holotools
+Version: 0.0.1
+Summary: test
+Home-page: https://github.com/HolobiomeProject/Holotools
+Author: Barry Guglielmo
+Author-email: barryguglielmo@gmail.com
+License: UNKNOWN
+Description: # Holotools
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Provides-Extra: dev

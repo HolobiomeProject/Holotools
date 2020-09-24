@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+src/Holotools.py
+src/clustering.py
+src/Holotools.egg-info/PKG-INFO
+src/Holotools.egg-info/SOURCES.txt
+src/Holotools.egg-info/dependency_links.txt
+src/Holotools.egg-info/requires.txt
+src/Holotools.egg-info/top_level.txt
+src/__pycache__/Holotools.cpython-37.pyc
+src/__pycache__/clustering.cpython-37.pyc
