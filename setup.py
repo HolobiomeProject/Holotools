@@ -9,9 +9,7 @@ setup(
 name='Holotools', #pypi name
 version = '0.0.7',
 description='Python Code Base Used by the Holobiome Team',
-py_modules=['Holotools',
-            'ht_clustering',
-            'ht_trim'], #'import' name
+py_modules=['Holotools','holotools'], #'import' name
 package_dir={'':'src'},
 long_description=long_description,
 long_description_content_type="text/markdown",
