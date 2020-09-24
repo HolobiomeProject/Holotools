@@ -1,6 +1,8 @@
 MANIFEST.in
 README.md
 setup.py
+dist/Holotools-0.0.3-py3-none-any.whl
+dist/Holotools-0.0.3.tar.gz
 src/Holotools.py
 src/clustering.py
 src/trim.py
@@ -11,3 +13,4 @@ src/Holotools.egg-info/requires.txt
 src/Holotools.egg-info/top_level.txt
 src/__pycache__/Holotools.cpython-37.pyc
 src/__pycache__/clustering.cpython-37.pyc
+src/__pycache__/trim.cpython-37.pyc
