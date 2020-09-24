@@ -5,7 +5,7 @@ def sanger_cleanest(min_len = 600,
     '''Longest Sequence Stretch Without any Ns'''
     print('sanger_cleanest in progress')
 def sliding_window(
-            sequence = test_sequence(),
+            sequence,
             window_size = 20,
             max_number_ns = 2,
             max_ns_inarow = 2,
