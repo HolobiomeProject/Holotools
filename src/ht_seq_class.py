@@ -19,40 +19,21 @@ def sliding_window(sequence,window_size = 20,max_number_ns = 2,max_ns_inarow = 2
         for i in range(0,len(left_gaps)-1):
             dist.append(left_gaps[i+1][2]-left_gaps[i][2])
         if max(dist)>600:
-            qual = 'good'
-        else:
-            qual = 'bad'
-        take = dist.index(max(dist))
-        left = left_gaps[take][2]
-        while sequence[left]=='N':
-            left+=1
-        try:
+            take = dist.index(max(dist))
+            left = left_gaps[take][2]
+            while sequence[left]=='N':
+                left+=1
             if sequence[left:].index('N')<20:
                 left += sequence[left:].index('N')+1
-        except:
-            placeholder = 'No index which is good'
-        right = left_gaps[take+1][1]+sequence[left_gaps[take+1][1]:].index('N')
+            right = left_gaps[take+1][1]+sequence[left_gaps[take+1][1]:].index('N')
+        else:
+            left = 0
+            right = len(sequence)
     else:
         left = 0
-        while sequence[left]=='N':
-            left+=1
-        try:
-            if sequence[left:].index('N')<20:
-                left += sequence[left:].index('N')+1
-        except:
-                placeholder = 'No index which is good'
-        right = len(sequence)-1
-        while sequence[right]=='N':
-            right-=1
-        if right-left >600:
-            qual = 'good'
-        else:
-            qual = 'bad'
-    d =  {  'seq':sequence,
-            'tseq':sequence[left:right],
-            'length':right-left,
-            'qual':qual,
-            'left':left,
-            'right':right,}
-    print(d)
-    return d
+        right = len(sequence)
+    if right-left>600:
+        qual = 'good'
+    else:
+        qual = 'bad'
+    return {'left':left,'right':right,'seq':sequence[left:right]}
