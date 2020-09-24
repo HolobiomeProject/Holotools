@@ -1,8 +1,8 @@
 MANIFEST.in
 README.md
 setup.py
-dist/Holotools-0.0.7-py3-none-any.whl
-dist/Holotools-0.0.7.tar.gz
+dist/Holotools-0.0.8-py3-none-any.whl
+dist/Holotools-0.0.8.tar.gz
 src/Holotools.py
 src/Holotools.egg-info/PKG-INFO
 src/Holotools.egg-info/SOURCES.txt
@@ -16,3 +16,4 @@ src/__pycache__/ht_biop.cpython-37.pyc
 src/__pycache__/ht_trim.cpython-37.pyc
 src/__pycache__/htrim.cpython-37.pyc
 src/__pycache__/trim.cpython-37.pyc
+src/holotools/__pycache__/__init__.cpython-37.pyc
