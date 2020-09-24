@@ -13,9 +13,12 @@ pip install Holotools
 ## Usage
 
 ```python
-import Holotools
+import holotools.htrim as ht
+import holotools.hbiop as hb
 
-Holotools.test() # returns 'This is a test of Holotools'
+ht.trim_many('/src/test_16.fna')
+
+wi(ts()) # returns 'This is a test of Holotools'
 
 ```
 
