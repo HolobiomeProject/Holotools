@@ -57,7 +57,7 @@ def sliding_window(sequence,window_size = 20,max_number_ns = 2,max_ns_inarow = 2
     return d
 
 
-from hbiop import *
+
 def trim_many(file,to = True,side='both',window_size = 20,max_number_ns = 2,max_ns_inarow = 2,min_len = 600,max_len = None):
     '''dictionary output from a multifasta input'''
     d = fdict(file)
