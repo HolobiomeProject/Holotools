@@ -9,6 +9,8 @@ src/Holotools.egg-info/requires.txt
 src/Holotools.egg-info/top_level.txt
 src/__pycache__/Holotools.cpython-37.pyc
 src/__pycache__/clustering.cpython-37.pyc
+src/__pycache__/hbiop.cpython-37.pyc
 src/__pycache__/ht_biop.cpython-37.pyc
 src/__pycache__/ht_trim.cpython-37.pyc
+src/__pycache__/htrim.cpython-37.pyc
 src/__pycache__/trim.cpython-37.pyc
