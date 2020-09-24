@@ -4,6 +4,8 @@ setup.py
 dist/Holotools-0.0.8-py3-none-any.whl
 dist/Holotools-0.0.8.tar.gz
 src/Holotools.py
+src/hbiop.py
+src/htrim.py
 src/Holotools.egg-info/PKG-INFO
 src/Holotools.egg-info/SOURCES.txt
 src/Holotools.egg-info/dependency_links.txt
