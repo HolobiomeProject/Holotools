@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+dist/holotools-0.0.1-py3-none-any.whl
+dist/holotools-0.0.1.tar.gz
+src/clustering.py
+src/Holotools.egg-info/PKG-INFO
+src/Holotools.egg-info/SOURCES.txt
+src/Holotools.egg-info/dependency_links.txt
+src/Holotools.egg-info/requires.txt
+src/Holotools.egg-info/top_level.txt
