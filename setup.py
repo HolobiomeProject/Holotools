@@ -7,7 +7,7 @@ with open("README.md","r") as fh:
 
 setup(
 name='Holotools', #pypi name
-version = '0.0.1',
+version = '0.0.2',
 description='Python Code Base Used by the Holobiome Team',
 py_modules=['clustering','Holotools'], #'import' name
 package_dir={'':'src'},
