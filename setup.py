@@ -6,9 +6,9 @@ with open("README.md","r") as fh:
     long_description = fh.read()
 
 setup(
-name='holotools', #pypi name
+name='Holotools', #pypi name
 version = '0.0.1',
-description='test',
+description='Python Code Base Used by the Holobiome Team',
 py_modules=['clustering'], #'import' name
 package_dir={'':'src'},
 long_description=long_description,
