@@ -55,14 +55,15 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
                 fdf = pd.concat([fdf,ep])
         except:
             na.write(k+'\tprimer not found\tall\n')
+        if side == 'right':
+            trunc[k]=v[:mmax]
+        elif side == 'left':
+            trunc[k]=v[mmin:]
+        if side == 'both':
+            trunc[k]=v[mmin:mmax]
     if deltmp == True:
         shutil.rmtree('tmp')
-    if side == 'right':
-        trunc[k]=v[:mmax]
-    elif side == 'left':
-        trunc[k]=v[mmin:]
-    if side == 'both':
-        trunc[k]=v[mmin:mmax]
+
 
     na.close()
     return fdf, trunc
