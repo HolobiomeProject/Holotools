@@ -34,6 +34,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
             s = df[df.sseqid.isin(endprimers)]
             for i in endprimers:
                 plen = len(p[i])
+                print(plen*(min_len_pct/100))
                 ep = s.loc[s.sseqid==i]
                 ep = ep.loc[ep.length>=plen*(min_len_pct/100)]
                 if len(ep)<1:
