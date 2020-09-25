@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 '''Truncate Sequences to primer locations'''
-def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primers_2020.02.fna', primerblastdb = '/home/boom/amp/primers/unambiguous_primers_2020.02', startprimers = ['515F_mod'], endprimers = ['806R_Mod','806F_Mod'], min_pct = 90, plusleft = 0, plusright = 0, min_len_pct = 90, side = 'both', deltmp = True):
+def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primers_2020.02.fna', primerblastdb = '/home/boom/amp/primers/unambiguous_primers_2020.02', startprimers = ['515F_mod'], endprimers = ['806R_Mod','806F_Mod','805R','806RB'], min_pct = 90, plusleft = 0, plusright = 0, min_len_pct = 80, side = 'both', deltmp = True):
     from holotools import biop
     import os
     import shutil
     import pandas as pd
-
+    import sys
     cwd = os.getcwd()
     # temp file set up for data dumps and manipulation
     try:
@@ -22,11 +22,22 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
     na.write('query\tissue\tdetails\n')
     trunc = {}
     # make tmp files of each seq blast and parse
+    #progress bar
+    n = len(d)
+    c = 0
     for k,v in d.items():
+        sys.stdout.write('\r')
+        # the exact output you're looking for:
+        c+=1
+        j = (c + 1) / n
+        sys.stdout.write("[%-20s] %d%%" % ('~'*int(20*j), 100*j))
+        sys.stdout.flush()
         out = open('%s/tmp/%s.fna'%(cwd,k),'w')
         out.write('>%s\n%s\n'%(k,v))
         out.close()
         os.system('blastn -db %s -query %s -task "blastn-short" -out %s -outfmt 6'%(primerblastdb,cwd+'/tmp/'+k+'.fna',cwd+'/tmp/'+k+'.tsv'))
+        mmax = -1
+        mmin = -1
         try:
             df = pd.read_csv(cwd+'/tmp/'+k+'.tsv', sep = '\t',header = None)
             df.columns = ['qseqid','sseqid','pident','length','mismatch','gapopen','qstart','qend','sstart','send','evalue','bitscore']
@@ -55,12 +66,16 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
                 fdf = pd.concat([fdf,ep])
         except:
             na.write(k+'\tprimer not found\tall\n')
+
         if side == 'right':
-            trunc[k]=v[:mmax]
+            if mmax != -1:
+                trunc[k]=v[:mmax]
         elif side == 'left':
-            trunc[k]=v[mmin:]
+            if mmin != -1:
+                trunc[k]=v[mmin:]
         elif side == 'both':
-            trunc[k]=v[mmin:mmax]
+            if mmax != -1 and mmin !=-1:
+                trunc[k]=v[mmin:mmax]
     if deltmp == True:
         shutil.rmtree('tmp')
 
