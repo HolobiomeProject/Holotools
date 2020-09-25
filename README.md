@@ -15,7 +15,7 @@ pip install Holotools
 ```python
 import holotools.htrim as ht # trimming algorithms
 
-ht.window_many('./src/holotools/test16.fna')
+ht.window_many('test16.fna')
 ```
 
 ## Contributing

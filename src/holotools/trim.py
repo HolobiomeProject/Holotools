@@ -60,7 +60,7 @@ def sliding_window(sequence,window_size = 20,max_number_ns = 2,max_ns_inarow = 2
 
 def window_many(file,to = True,side='both',window_size = 20,max_number_ns = 2,max_ns_inarow = 2,min_len = 600,max_len = None):
     '''dictionary output from a multifasta input'''
-    import holotools.hbiop as hb
+    import holotools.biop as hb
     d = hb.fdict(file)
     td = {}
     for k,v in d.items():
