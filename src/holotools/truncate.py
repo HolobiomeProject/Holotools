@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''Truncate Sequences to primer locations'''
-def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primers_2020.02.fna', primerblastdb = '/home/boom/amp/primers/unambiguous_primers_2020.02', startprimers = ['515F_mod'], endprimers = ['806R_Mod','806F_Mod'], min_pct = 90, plusleft = 0, plusright = 0, min_len_pct = 90, sides = 'both', deltmp = True):
+def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primers_2020.02.fna', primerblastdb = '/home/boom/amp/primers/unambiguous_primers_2020.02', startprimers = ['515F_mod'], endprimers = ['806R_Mod','806F_Mod'], min_pct = 90, plusleft = 0, plusright = 0, min_len_pct = 90, side = 'both', deltmp = True):
     from holotools import biop
     import os
     import shutil
