@@ -7,7 +7,7 @@ with open("README.md","r") as fh:
 
 setup(
 name='Holotools', #pypi name
-version = '0.0.9',
+version = '0.0.10',
 description='Python Code Base Used by the Holobiome Team',
 py_modules=['Holotools',
             'holotools',
