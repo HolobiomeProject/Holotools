@@ -40,7 +40,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
                 if len(ep)<1:
                     na.write(k+'\tprimer not found\t%s\n'%i)
                 else:
-                    mmin = min(ep.qstart)
+                    mmax = min(ep.qstart)
                 fdf = pd.concat([fdf,ep])
             # start primers
             s = df[df.sseqid.isin(startprimers)]
@@ -51,7 +51,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
                 if len(ep)<1:
                     na.write(k+'\tprimer not found\t%s\n'%i)
                 else:
-                    mmax = max(ep.qend)
+                    mmin = max(ep.qend)
                 fdf = pd.concat([fdf,ep])
         except:
             na.write(k+'\tprimer not found\tall\n')
