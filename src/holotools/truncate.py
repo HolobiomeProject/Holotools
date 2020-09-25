@@ -54,4 +54,4 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
     na.close()
     return fdf
 
-truncate2primer('test16.fna')
+# truncate2primer('test16.fna')
