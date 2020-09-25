@@ -59,7 +59,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
             trunc[k]=v[:mmax]
         elif side == 'left':
             trunc[k]=v[mmin:]
-        if side == 'both':
+        elif side == 'both':
             trunc[k]=v[mmin:mmax]
     if deltmp == True:
         shutil.rmtree('tmp')
