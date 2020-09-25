@@ -50,7 +50,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
                 fdf = pd.concat([fdf,ep])
         except:
             na.write(k+'\tprimer not found\tall\n')
-    shutil.rmtree('tmp')
+    # shutil.rmtree('tmp')
     na.close()
     return fdf
 
