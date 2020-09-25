@@ -50,7 +50,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
                 ep = ep.loc[ep.length>=plen*(min_len_pct/100)]
                 if len(ep)<1:
                     na.write(k+'\tprimer not found\t%s\n'%i)
-                if side = 'right':
+                else:
                     mmax = max(ep.qend)
                 fdf = pd.concat([fdf,ep])
         except:
