@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''Truncate Sequences to primer locations'''
-def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primers_2020.02.fna', primerblastdb = '/home/boom/amp/primers/unambiguous_primers_2020.02', startprimers = ['515F_mod'], endprimers = ['806R_Mod','806F_Mod','805R','806RB'], min_pct = 90, plusleft = 0, plusright = 0, min_len_pct = 80, side = 'both', deltmp = True):
+def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primers_2020.02.fna', db = '/home/boom/amp/primers/unambiguous_primers_2020.02', startprimers = ['515F_mod','518R'], endprimers = ['907R','904R','902R','895F','928F'], min_pct = 90, plusleft = 0, plusright = 0, min_len_pct = 80, side = 'both', deltmp = True):
     from holotools import biop
     import os
     import shutil
@@ -35,7 +35,7 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
         out = open('%s/tmp/%s.fna'%(cwd,k),'w')
         out.write('>%s\n%s\n'%(k,v))
         out.close()
-        os.system('blastn -db %s -query %s -task "blastn-short" -out %s -outfmt 6'%(primerblastdb,cwd+'/tmp/'+k+'.fna',cwd+'/tmp/'+k+'.tsv'))
+        os.system('blastn -db %s -query %s -task "blastn-short" -out %s -outfmt 6'%(db,cwd+'/tmp/'+k+'.fna',cwd+'/tmp/'+k+'.tsv'))
         mmax = -1
         mmin = -1
         try:
@@ -81,6 +81,10 @@ def truncate2primer(file, primerlist= '/home/boom/amp/primers/unambiguous_primer
 
 
     na.close()
+    new = open('truncated_'+file,'w')
+    for k,v in trunc.items():
+        new.write('>%s\n%s\n'%(str(k),str(v)))
+    new.close()
     return fdf, trunc
 
 # truncate2primer('test16.fna')
